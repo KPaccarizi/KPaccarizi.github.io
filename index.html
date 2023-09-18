@@ -79,22 +79,22 @@
           aria-hidden="true"></i></a>
     </div>
 
-    <div class="video-container" >
-
-      <iframe src="music-kosova.mp3" allow="autoplay" style="display:none" id="iframeAudio">
-      </iframe> 
-
-      <audio autoplay loop  id="playAudio">
-        <source src="music-kosova.mp3">
-    </audio>
-
-      <video  id="video1" autoplay muted loop>
+    <div class="video-container">
+      <!-- Embed an audio element for autoplaying music with muted volume -->
+      <audio autoplay muted loop id="bgAudio">
+        <source src="music-kosova.mp3" type="audio/mpeg">
+      </audio>
+    
+      <!-- Your video element here -->
+      <video id="video1" autoplay muted loop>
         <source src="content/Welcome_to_Kosova_v2.mp4" type="video/mp4" />
       </video>
-
-      <button id="muteButton">Mute Music</button>
-
+    
+      <!-- Button to unmute/mute -->
+      <button id="muteButton">Unmute Music</button>
     </div>
+    
+
     <div class="info-container">
 
       <div id="shape2" class="shape_news">
@@ -182,26 +182,25 @@
   </div>
 
   <script>
-    var iframeAudio = document.getElementById("iframeAudio");
-    var playAudio = document.getElementById("playAudio");
-
+    var bgAudio = document.getElementById("bgAudio");
     var muteButton = document.getElementById("muteButton");
-
-    var isChrome = /Chrome/.test(navigator.userAgent) && /Google Inc/.test(navigator.vendor);
-    if (!isChrome){
-        $('#iframeAudio').remove()
-    }
-    else {
-        $('#playAudio').remove() // just to make sure that it will not have 2x audio in the background 
-        var player = document.getElementById("audioPlayer");
-        player.src = "";
-        player.removeAttribute('src');
+  
+    // Function to toggle unmute/mute
+    function toggleMute() {
+      if (bgAudio.muted) {
+        // Unmute
+        bgAudio.muted = false;
+        muteButton.innerText = "Mute Music";
+      } else {
+        // Mute
+        bgAudio.muted = true;
+        muteButton.innerText = "Unmute Music";
+      }
     }
   
     muteButton.addEventListener("click", toggleMute);
-
+  </script>
   
-    </script>
     
   
   
