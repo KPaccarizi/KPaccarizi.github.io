@@ -413,22 +413,20 @@ footer {
   padding-top : 10px;
   margin-bottom : 5px;
 }
-
-/*////////// **************** SORTIES **************** //////////*/
-body{
-   display: flex;
-   justify-content: center;
-   text-align: center;
-   flex-direction: column;
-   padding-bottom: 30px;
-
+/* Default styles for larger screens */
+body {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  padding-bottom: 30px;
 }
 
-.pad-bot{
+.pad-bot {
   padding-bottom: 60px;
 }
 
-.titre{
+.titre {
   color: rgba(3, 44, 78);
   height: 160px;
   display: flex;
@@ -438,7 +436,7 @@ body{
   border-radius: 40px;
 }
 
-.container{
+.container {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -447,11 +445,11 @@ body{
   padding-top: 30px;
 }
 
-.img{
+.img {
   width: 50%;
 }
 
-.para{
+.para {
   width: 50%;
   display: flex;
   flex-direction: column;
@@ -459,7 +457,8 @@ body{
   border-radius: 8px;
   justify-content: center;
 }
-.picture{
+
+.picture {
   display: flex;
   justify-content: space-evenly;
   width: 600px;
@@ -468,7 +467,7 @@ body{
   filter: drop-shadow(0 0 0.90rem gray);
 }
 
-.box{
+.box {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -476,8 +475,54 @@ body{
   padding-top: 30px;
   padding-bottom: 30px;
   border-radius: 8px;
-
 }
+
+.shadow {
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+.moon {
+  box-shadow: rgba(3, 44, 78, 0.25) 0px 5px 10px -5px, rgba(3, 44, 78, 0.3) 0px 5px 7px -5px;
+}
+
+h2 {
+  padding-bottom: 20px;
+  padding-top: -20px;
+}
+
+/* Responsive styles for smaller screens (e.g., phones) */
+@media screen and (max-width: 768px) {
+  .titre {
+    font-size: 30px;
+    height: auto;
+    padding: 20px;
+    border-radius: 0;
+  }
+
+  .container {
+    padding: 20px;
+  }
+
+  .img {
+    width: 100%;
+  }
+
+  .para {
+    width: 100%;
+  }
+
+  .picture {
+    width: 100%;
+    height: auto;
+  }
+
+  .box {
+    flex-direction: column;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
 
 .shadow{
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;

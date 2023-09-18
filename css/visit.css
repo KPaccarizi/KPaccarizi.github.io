@@ -414,7 +414,6 @@ footer {
   margin-bottom : 5px;
 }
 
-/*////////// **************** SORTIES **************** //////////*/
 body{
    display: flex;
    justify-content: center;
@@ -436,7 +435,8 @@ body{
   border-radius: 40px;
 }
 
-.container{
+/* Common styles for all screen sizes */
+.container {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -445,52 +445,65 @@ body{
   padding-top: 30px;
 }
 
-
-
-.para{
+.para {
   width: 90%;
   display: flex;
   flex-direction: column;
   border-radius: 8px;
   text-align: left;
-
 }
-.picture{
+
+.picture {
   display: flex;
   justify-content: space-around;
-  width: 300px;
-  height: 150px;
+  width: 100%; /* Adjusted for responsiveness */
+  max-width: 300px; /* Added for responsive limit */
+  height: auto; /* Adjusted for responsiveness */
   border-radius: 8px;
   filter: drop-shadow(0 0 0.90rem gray);
 }
 
-.box{
+.box {
   display: flex;
   flex-direction: column;
   align-items: center;
   border-radius: 8px;
-  height: 600px;
-  width: 320px;
+  height: auto; /* Adjusted for responsiveness */
+  max-width: 320px; /* Added for responsive limit */
 }
 
-.shadow{
+.shadow {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
 }
 
-.moon{
-
+.moon {
   box-shadow: rgba(3, 44, 78, 0.25) 0px 5px 10px -5px, rgba(3, 44, 78, 0.3) 0px 5px 7px -5px;
 }
 
-h2{
+h2 {
   padding-top: 30px;
   display: flex;
-
   padding-bottom: 20px;
   padding-top: -20px;
 }
 
-a{
+a {
   text-decoration: none;
   color: darkblue;
+}
+
+/* Responsive adjustments for phones */
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Stack items in a column on small screens */
+    align-items: center; /* Center items horizontally on small screens */
+  }
+  
+  .picture {
+    max-width: 100%; /* Allow images to adjust to screen width */
+  }
+  
+  .box {
+    max-width: 100%; /* Allow boxes to adjust to screen width */
+  }
 }

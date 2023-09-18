@@ -155,7 +155,7 @@
   background-color :transparent !important;
 }
 
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1000px) {
   .topnav a {
     display: none;
   }
@@ -381,7 +381,6 @@ footer {
   margin-bottom : 5px;
 }
 
-/*////////// **************** ACCUEIL **************** //////////*/
 
 /* Scroll Arrow */
 
@@ -412,7 +411,6 @@ html{
   scroll-behavior : smooth;
 }
 
-/* ____________News____________ */
 
 /* Structure */
 
@@ -468,7 +466,7 @@ html{
   height : 117.5px; 
 }
 
-/* Titre article */
+/* Title article */
 
 .news_2 {
   display :flex;

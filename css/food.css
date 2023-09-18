@@ -1,4 +1,4 @@
-/*////////// **************** MUSEES **************** //////////*/
+/*////////// **************** Food **************** //////////*/
 
 .musee_background{
     background-image: url("../content/food.jpg");
@@ -10,8 +10,7 @@
   z-index : 1;
 }
 
-/* Carousel interactif */
-
+/* Interactive carousel */
 
 .p_carousel{
 	position: relative;
@@ -45,8 +44,7 @@
 	max-height: 100%;
 }
 
-/* texte sur le carousel */
-
+/* text on the carousel */
 
 .p_z-indexed_txt{
 	position: absolute;
@@ -86,7 +84,7 @@
 	transition: 0.5s;
 }
 
-/* boutons du carousel */
+/* carousel buttons */
 
 .p_carousel_control {
     background: rgba(0, 0, 0, 0.28);

@@ -1,19 +1,33 @@
-/*////////// **************** HISTOIRE **************** //////////*/
+/*////////// **************** About **************** //////////*/
 
-.p_main{
+/* Default styles for .p_main and .histoire_background */
+.p_main {
 	padding-bottom: 300px;
-	background-color: rgb(243, 234, 234);	
-}
-
-.histoire_background{
+	background-color: rgb(243, 234, 234);
+  }
+  
+  .history_background {
 	background-image: url("../content/war.jpg");
-	background-size : cover;
-  height: 150px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position :center;
-  z-index : 1;
-}
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-position: center;
+	z-index: 1;
+	height: 150px;
+  }
+  
+  /* Media query for screens smaller than 768px (e.g., phones) */
+  @media screen and (max-width: 768px) {
+	.p_main {
+	  padding-bottom: 100px; /* Adjust padding for smaller screens */
+	}
+  
+	.history_background {
+	  height: 100px; /* Adjust the height for smaller screens */
+	}
+  }
+  
+
 
 /* main content page */
 
@@ -36,7 +50,7 @@
 	box-shadow: rgb(3 44 78 / 25%) 0px 5px 10px -5px, rgb(3 44 78 / 30%) 0px 5px 7px -5px;
 }
 
-/* agrandissement des dates */
+/* date enlargement */
 
 .p_article:target .p_txt_main_history_info, .p_txt_main_history_img{
 	max-height: 300px;
@@ -54,27 +68,43 @@
 	overflow: hidden;
 }
 
-/* texte général + "origine" */
-
-.p_txt_origin{
+/* general text + "origin" */
+/* Default styles for image and article layout */
+.p_txt_origin {
 	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-}
-
-.p_txt_origin_left{
+	flex-direction: column; /* Change to column for mobile */
+	align-items: center; /* Center horizontally */
+  }
+  
+  .p_txt_origin_left {
 	display: flex;
 	flex-direction: column;
-	width: 50%;
-	padding:  40px;
-}
-
-.p_txt_origin_right img{
-	width:  500px;
-	height: 300px;
+	width: 100%; /* Occupy full width on mobile */
+	padding: 20px; /* Reduce padding for mobile */
+	text-align: center; /* Center text on mobile */
+  }
+  
+  .p_txt_origin_right img {
+	max-width: 100%; /* Make the image responsive */
+	height: auto; /* Maintain image aspect ratio */
 	padding: 10px;
-}
-
+  }
+  
+  /* Media query for screens smaller than 768px (e.g., phones) */
+  @media screen and (max-width: 768px) {
+	.p_txt_origin {
+	  flex-direction: column; /* Ensure a stacked layout on smaller screens */
+	}
+  
+	.p_txt_origin_left {
+	  padding: 10px; /* Reduce padding further for mobile */
+	}
+  
+	.p_txt_origin_right img {
+	  width: 100%; /* Occupy full width on mobile */
+	}
+  }
+  
 .p_txt, .p_txt_main_history_info, .p_article{
 	font-family: montserrat;
 }
@@ -93,7 +123,7 @@
 	font-size: 30px;
 }
 
-/* réglages des boutons "en savoir plus" */
+/* “learn more” button settings */
 .p_txt_main_history_btn{
 	text-decoration: none;
 	color: black;
@@ -149,8 +179,7 @@
 	animation-duration: 15s;
 }
 
-/* texte sur le côté du diaporama */
-
+/* text on the side of the slideshow */
 .p_txt_visit{
 	position: absolute;
 	z-index: 1;

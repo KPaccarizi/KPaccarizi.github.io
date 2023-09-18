@@ -414,29 +414,22 @@ footer {
   margin-bottom : 5px;
 }
 
-/*////////// **************** SORTIES **************** //////////*/
-/*////////// **************** RANDONNEES **************** //////////*/
 
-body{
-   display: flex;
-   justify-content: center;
-   text-align: center;
-   flex-direction: column;
-   padding-bottom: 30px;
+
+/* Responsive adjustments for phones and iPad */
+@media screen and (max-width: 1024px) {
+  body {
+    padding-bottom: 15px; /* Adjust padding for phones and iPad */
+  }
+
+  .titre {
+    font-size: 30px; /* Adjust font size for phones and iPad */
+  }
 }
 
-.titre{
-  color: rgba(3, 44, 78);
-  height: 160px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  font-size: 40px;
-  border-radius: 40px;
 
-}
-
-.container-rando{
+/* Common styles for all screen sizes */
+.container-rando {
   border-radius: 8px;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -446,12 +439,13 @@ body{
   flex-direction: row;
   justify-content: space-around;
   column-gap: 20px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
   height: auto;
   flex-wrap: wrap;
 }
 
-.para{
+
+.para {
   display: flex;
   text-align: center;
   border-radius: 8px;
@@ -460,9 +454,10 @@ body{
   margin: auto;
   padding-bottom: 40px;
   height: 320px;
+  word-wrap: break-word; /* Add this line */
 }
 
-.picture{
+.picture {
   border-radius: 8px;
   filter: drop-shadow(0 0 0.90rem gray);
   object-fit: fixed;
@@ -470,7 +465,7 @@ body{
   height: 350px;
 }
 
-.items{
+.items {
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -479,7 +474,7 @@ body{
   width: 25%;
 }
 
-h2{
+h2 {
   justify-content: flex-start;
   display: flex;
   text-align: left;
@@ -489,7 +484,7 @@ h2{
   padding-bottom: 10px;
 }
 
-.logoInfo{
+.logoInfo {
   width: 50px;
   height: 50px;
   margin-right: 20px;
@@ -498,7 +493,7 @@ h2{
 
 .hide {
   border: solid 0.5px;
-  padding:10px;
+  padding: 10px;
   border-radius: 12px;
   width: 220px;
 }
@@ -508,14 +503,39 @@ h2{
   color: black;
 }
 
-.align{
+.align {
   display: flex;
 }
 
-p{
+p {
   font-size: 25px;
 }
 
-.shadow{
+.shadow {
   box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+}
+
+/* Responsive adjustments for phones */
+@media screen and (max-width: 768px) {
+  .container-rando {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .para {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .items {
+    width: 100%; /* Full width on smaller screens */
+  }
+
+  .picture {
+    width: 100%; /* Full width on smaller screens */
+    height: auto; /* Adjust height to maintain aspect ratio */
+  }
+}
+
+/* Responsive adjustments for iPads */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /* Add any specific adjustments for iPads here */
 }
