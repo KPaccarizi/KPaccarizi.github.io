@@ -242,6 +242,14 @@ height: 100%;
 object-fit: cover;
 }
 
+#cookiesPolicyButton {
+  position: absolute;
+  bottom: -5;
+  right: 0;
+  margin: 10px;
+  z-index: 999; /* Adjust the z-index to ensure it's on top of other elements */
+}
+
 #muteButton {
   position: absolute;
   bottom: -5;
@@ -249,6 +257,7 @@ object-fit: cover;
   margin: 10px; /* Add some margin to keep it inside the frame */
  
 }
+
 
 /*////////// Style the footer //////////*/
 
@@ -607,11 +616,16 @@ opacity : 50%;
     font-size : 20px;
   }
 
-  .news_title{
-    color:white;
-    font-size: 30px;
-    padding-right : 0px;
-  }
+  .news_title {
+  color: white;
+  font-size: 30px;
+  padding-right: 0px;
+  overflow: hidden; /* Hide overflowing text */
+  white-space: nowrap; /* Prevent line breaks */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+  text-align: center; /* Center-align the text */
+
+}
   }
 
 

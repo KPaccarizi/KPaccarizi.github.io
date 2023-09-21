@@ -80,19 +80,24 @@
     </div>
 
     <div class="video-container">
-      <!-- Embed an audio element for autoplaying music with unmuted volume -->
-      <audio autoplay  loop id="bgAudio">
-        <source src="music-kosova.mp3" type="audio/mpeg">
+
+      <button id="cookiesPolicyButton">Accept Cookies Policy</button>
+
+      <!-- Embed an audio element for autoplaying music with muted volume -->
+
+      <audio autoplay muted loop id="bgAudio">
+          <source src="music-kosova.mp3" type="audio/mpeg">
       </audio>
-    
+  
       <!-- Your video element here -->
-      <video id="video1" autoplay muted loop>
+      <video id="video1" play muted>
         <source src="content/Welcome_to_Kosova_v2.mp4" type="video/mp4" />
-      </video>
-    
+    </video>
+
       <!-- Button to unmute/mute -->
-      <button id="muteButton">Unmute Music</button>
-    </div>
+      <button id="muteButton">Mute Music</button>
+  </div>
+
     
 
     <div class="info-container">
@@ -181,28 +186,6 @@
     <p>Copyright 2023 - Travel to Kosova - Kujtesa Pacarizi</p>
   </div>
 
-  <script>
-    var bgAudio = document.getElementById("bgAudio");
-    var muteButton = document.getElementById("muteButton");
-  
-    // Function to toggle unmute/mute
-    function toggleMute() {
-      if (bgAudio.muted) {
-        // Unmute
-        bgAudio.muted = false;
-        muteButton.innerText = "Mute Music";
-      } else {
-        // Mute
-        bgAudio.muted = true;
-        muteButton.innerText = "Unmute Music";
-      }
-    }
-  
-    muteButton.addEventListener("click", toggleMute);
-  </script>
-  
-    
-  
   
 </body>
 
