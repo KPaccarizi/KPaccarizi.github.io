@@ -180,16 +180,95 @@
 }
 
 /* text on the side of the slideshow */
-.p_txt_visit{
-	position: absolute;
-	z-index: 1;
-	left: 2vw;
-	top: -2vw;
-	background-color: rgb(243, 234, 234);
-	left: -18%;
-	background-color: #ecdfdf;
-	padding: 3%;
-	width: 40%;
-	box-shadow: rgb(3 44 78 / 25%) 5px 5px 10px, rgb(3 44 78 / 30%) 0px 5px 7px -5px;
-	font-family: montserrat;
+/* text on the side of the slideshow */
+.p_txt_visit {
+    position: absolute;
+    z-index: 1;
+    left: 2vw;
+    top: -2vw;
+    background-color: rgb(243, 234, 234);
+    left: -18%;
+    background-color: #ecdfdf;
+    padding: 3%;
+    width: 40%;
+    box-shadow: rgb(3 44 78 / 25%) 5px 5px 10px, rgb(3 44 78 / 30%) 0px 5px 7px -5px;
+    font-family: montserrat;
+}
+@media screen and (max-width: 768px) {
+    /* Add these styles for phones and iPads */
+	.p_slider_window {
+        position: relative;
+        width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+        max-width: 100%; /* Ensure the slider doesn't exceed the screen width */
+        margin-top: 4% auto;
+        margin-bottom: 1.7%;
+        overflow: hidden; /* Hide overflowing content */
+    }
+
+	.p_slider .p_slider_b {
+        width: 520%; /* Adjust the width for the animation */
+        animation-name: slider;
+        animation-iteration-count: infinite;
+        animation-duration: 15s;
+        white-space: nowrap; /* Prevent images from wrapping to the next line */
+    }
+
+    .p_slider_b img {
+        width: 10%; /* Adjust the image width to fit the container */
+        height: auto; /* Maintain image aspect ratio */
+        float: left;
+    }
+
+    .p_slider {
+        position: relative; /* Use relative positioning */
+        left: 0; /* Reset left position */
+        overflow: hidden;
+    }
+
+    .p_slider_b {
+        width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+        position: relative; /* Use relative positioning */
+        left: 0; /* Reset left position */
+        white-space: nowrap; /* Prevent images from wrapping to the next line */
+        animation: none; /* Disable the animation for smaller screens */
+    }
+
+    .p_txt_visit {
+        position: relative;
+        z-index: 1;
+        left: 0; /* Reset left position */
+        top: 0; /* Reset top position */
+        background-color: rgb(243, 234, 234);
+        padding: 3%;
+        width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+        box-shadow: none; /* Remove the box shadow for smaller screens */
+        font-family: montserrat;
+    }
+}
+
+
+
+/* Style the footer */
+/* Style the footer for larger screens */
+footer {
+    background-color: #26272b;
+    font-size: 15px;
+    height: 100px;
+    padding-top: 30px;
+}
+
+.footer_container {
+    display: flex;
+    flex-direction: row;
+    margin-right: 5px;
+    margin-left: 5px;
+    gap: 20px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    /* Hide the footer for screens with a maximum width of 768px */
+    footer {
+        display: none;
+    }
 }

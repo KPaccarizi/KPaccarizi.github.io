@@ -1,25 +1,65 @@
 /*////////// **************** Food **************** //////////*/
 
-.musee_background{
-    background-image: url("../content/food.jpg");
-    background-size : cover;
-  height: 150px;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-position :center;
-  z-index : 1;
+
+body {
+    width: 100%;
+    max-width: 1600px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0;
+
+
 }
+
+
+.musee_background {
+    background-image: url("../content/food.jpg");
+    background-size: cover;
+    height: 150px;
+    background-repeat: no-repeat;
+    background-attachment: fixed; 
+    background-position: center;
+    z-index: 1;
+}
+
+/* Media query for screens smaller than 768px (e.g., tablets and phones) */
+@media (max-width: 768px) {
+    .musee_background {
+        height: 100px; /* Adjust the height for smaller screens */
+    }
+
+    
+}
+
+
+
+
+
 
 /* Interactive carousel */
+/* Interactive carousel */
+/* Interactive carousel */
 
-.p_carousel{
-	position: relative;
+.p_carousel {
+    width: 100%;
+
+    position: relative;
+    max-width: 100%; /* Ensure the carousel doesn't exceed the viewport width */
+    margin: 0 auto; /* Center the carousel horizontally */  
+    align-items: center;
+    justify-content: center;
+      
 }
 
-.p_carousel_inside{
-	position:relative;
-	overflow:hidden;
-	width: 100%;
+.p_carousel_inside {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto; /* Center the carousel horizontally */   
+    align-items: center;
+    justify-content: center; 
+
 }
 
 .p_carousel_open:checked + .p_carousel_item {
@@ -29,62 +69,87 @@
 
 .p_carousel_item {
     position: absolute;
-	display: flex;
-	align-items: flex-end;
-	justify-content: flex-end;
-	margin-top: 20px;
-	padding-bottom: 20px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-bottom: 20px;
     opacity: 0;
     transition: opacity 0.6s ease-out;
+    width: 100%;
 }
 
 .p_carousel_item img {
     display: block;
-	max-width: 100%;
-	max-height: 100%;
+    max-width: 100%; /* Make images responsive */
+    height: auto; /* Auto-adjust image height */
 }
 
 /* text on the carousel */
-
-.p_z-indexed_txt{
-	position: absolute;
-	display: flex;
-	margin-bottom: 2%;
-	margin-right: 1%;
-	z-index: 2;
-	width: 30%;
-	flex-direction: column;
-	align-items	: center;
-	font-family : montserrat;
-	text-align: center;
-	font-size: 2vh;
-	background-color: #e6d6d6;
-	gap: 20px;
-	padding: 1%;
-	opacity: 85%;
+.p_z-indexed_txt {
+    position: absolute;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    width: 40%; /* Adjust the width to make it smaller */
+    max-width: 300px; /* Set a maximum width if needed */
+    flex-direction: column;
+    font-family: montserrat;
+    text-align: center;
+    font-size: 1.8vh; /* Adjust the font size to make it larger */
+    background-color: #e6d6d6;
+    gap: 10px; /* Adjust the gap between elements */
+    padding: 1%;
+    opacity: 85%;
+    bottom: 4%; /* Increase the distance from the bottom */
+    right: 0;
 }
 
-.p_z-indexed_txt:hover{
-	opacity: 100%;
-	transition: 0.2s;
+
+
+.p_z-indexed_txt:hover {
+    opacity: 100%;
+    transition: 0.2s;
 }
 
-.p_z-indexed_txt a{
-	color: black;
-	background-color: #eadcdc;
-	text-decoration: none;
-	padding: 5%;
-	border: 1px solid black;
-	border-radius: 40px;
+.p_z-indexed_txt a {
+    color: black;
+    background-color: #eadcdc;
+    text-decoration: none;
+    padding: 5%;
+    border: 1px solid black;
+    border-radius: 40px;
 }
 
-.p_z-indexed_txt a:hover{
-	background-color: white;
-	color: #38B6FF;
-	transition: 0.5s;
+.p_z-indexed_txt a:hover {
+    background-color: white;
+    color: #38B6FF;
+    transition: 0.5s;
 }
 
-/* carousel buttons */
+/* Media Queries for Responsive Design */
+
+@media (max-width: 768px) {
+    /* Adjust CSS for tablets (e.g., iPad) */
+    .p_z-indexed_txt {
+        font-size: 1.5vh;
+    }
+}
+
+@media (max-width: 576px) {
+    /* Adjust CSS for phones */
+    .p_carousel_item img {
+        max-width: 100%;
+        height: auto;
+        max-height: 60vh; /* Adjust the value to control image height on phones */
+    }
+
+    .p_z-indexed_txt a {
+        padding: 2% 3%; /* Adjust padding for a smaller button on mobile */
+        margin-top: -10px; /* Move the text slightly higher on mobile (adjust as needed) */
+    }
+}
 
 .p_carousel_control {
     background: rgba(0, 0, 0, 0.28);
@@ -96,7 +161,7 @@
     height: 40px;
     line-height: 35px;
     position: absolute;
-    top: 50%;
+    top: calc(50% - 40px) !important; /* Add !important to override conflicting styles */
     cursor: pointer;
     transform: translate(0, -50%);
     text-align: center;
@@ -130,17 +195,31 @@
     margin: 0;
     padding: 0;
     position: absolute;
-    bottom: 2%;
+    bottom: 5%; /* Adjust the bottom value to move the indicators even lower */
     left: 0;
     right: 0;
     text-align: center;
     z-index: 10;
 }
 
+@media (max-width: 576px) {
+    .p_carousel_ind {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+        bottom: 5%; /* Adjust the bottom value to move the indicators even lower */
+        left: 0;
+        right: 0;
+        text-align: center;
+        z-index: 10;
+        right: 10%; /* Adjust the left value to move it to the left */
+    }
+}
+
 .p_carousel_ind li {
     display: inline-block;
     margin: 0 5px;
-	
 }
 
 .carousel-bullet {
@@ -159,5 +238,5 @@
 #p_carousel_3:checked ~ .control-3 ~ .p_carousel_ind li:nth-child(3) .carousel-bullet,
 #p_carousel_4:checked ~ .control-4 ~ .p_carousel_ind li:nth-child(4) .carousel-bullet,
 #p_carousel_5:checked ~ .control-5 ~ .p_carousel_ind li:nth-child(5) .carousel-bullet {
-	color: #38B6FF;
+    color: #38B6FF;
 }

@@ -7,10 +7,59 @@
 
 /*////////// Apply everywhere //////////*/
 
+/* Default box-sizing for all elements */
 * {
   box-sizing: border-box;
-  margin : 0;
+  margin: 0;
+  padding: 0;
+
 }
+
+body {
+  width: 100%;
+  max-width: 1600px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0;
+
+
+}
+
+/* Media query for phone-sized screens */
+@media screen and (max-width: 768px) {
+  * {
+    box-sizing: border-box; /* Change box-sizing for phone-sized screens */
+    overflow-x: hidden;
+  }
+
+  body {
+    padding: 0; /* Remove any padding on the body element */
+    margin: 0; /* Remove any margin on the body element */
+  }
+  
+ .video-container {
+    padding-bottom: 0; /* Remove the padding for better space utilization */
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    display: block; /* Ensure video-container takes full width on smaller screens */
+    overflow-x: hidden; /* Hide horizontal overflow, if any */
+  }
+
+  .info-container {
+    height: auto; /* Allow the height to adjust based on content */
+    flex-direction: column;
+    display: block; /* Ensure info-container takes full width on smaller screens */
+  }
+  .news_title {
+    color: white;
+    font-size: 20px; /* Adjust the font size for better fit on smaller screens */
+    text-align: center;
+    padding-right: 10px; /* Reduce the padding for better use of space */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+  }
+}
+
+
 
 /*//////////   Style the header  //////////*/
 
@@ -22,10 +71,8 @@
 }
 
 .logo_container {
-  width : 400px;
-  margin : auto;
-  justify-content: center;
-  text-align : center;
+  width: 100%; /* Adjust for responsiveness */
+  text-align: center;
 }
 
 #logo{
@@ -49,6 +96,7 @@
   background-color: white;
   text-align:center;
   padding : 12px ;
+
   display : flex;
   flex-direction: row;
   justify-content: center;
@@ -216,7 +264,7 @@ font-size: 25px;}
   flex-direction: row;
   justify-content: center;
   gap : 20px;
-  margin-top: 15px;
+  margin-top: 12px;
   margin-bottom : -5px;
 }
 
@@ -440,6 +488,11 @@ html{
   font-size: 30px;
   text-align :center;
   padding-right : 40px;
+  overflow: hidden; /* Hide overflowing text */
+
+  white-space:inherit; /* Prevent line breaks */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+  text-align: center; /* Center-align the text */
 }
 
 /* Images D&G */
@@ -497,6 +550,29 @@ html{
   font-size : 25px;
 }
 
+@media screen and (max-width: 768px) {
+  .news_2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 150px; /* Adjust the height for phone screens */
+    background-color: rgb(243, 234, 234);
+  }
+
+  .news_2 h1 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    height: 150px; /* Adjust the height for phone screens */
+    font-size: 15px;
+  }
+}
+
+
 /* JS_Left_img */
 
 .left_img1{
@@ -542,7 +618,7 @@ opacity : 50%;
 #txt1{
   display: flex;
   background-color:white;
-  height : 70px;
+  height : 90px;
   width : 1000px;
   justify-content : center;
   align-items :center;
@@ -551,7 +627,7 @@ opacity : 50%;
 #txt2{
   display: none;
   background-color:white;
-  height : 70px;
+  height : 90px;
   width : 1000px;
   justify-content : center;
   align-items :center;
@@ -560,7 +636,7 @@ opacity : 50%;
 #txt3{
   display: none;
   background-color:white;
-  height : 70px;
+  height : 90px;
   width : 1000px;
   justify-content : center;
   align-items :center;
@@ -569,7 +645,7 @@ opacity : 50%;
 #txt4{
   display: none;
   background-color:white;
-  height : 70px;
+  height : 110px;
   width : 1000px;
   justify-content : center;
   align-items :center;
@@ -626,7 +702,60 @@ opacity : 50%;
   text-align: center; /* Center-align the text */
 
 }
+
+
+
   }
 
 
+  @media screen and (max-width: 768px) {
+    .news_1 {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      background-color: #26272b;
+      justify-content: center;
+      padding-top: 10px;
+      padding-bottom: 10px;
+      align-items: center;
+      width: auto;
+    }
+  
+    .news_1_left {
+      justify-content: center;
+      height: auto;
+    }
+  
+    .news_1_left img {
+      max-width: 100%; /* Ensure the image doesn't exceed the screen width */
+      height: auto;
+    }
+  
+    .news_1_right {
+      justify-content: center;
+      height: auto;
+      flex-direction: row;
+      width: 90%;
+    }
+  
+    .news_1_right img {
+      height: auto;
+      width: 25%;
+    }
+  
+    .news_2 h1 {
+      font-size: 20px;
+    }
 
+    .news_title {
+      color: white;
+      font-size: 20px; /* Adjust font size for smaller screens */
+      line-height: 1; /* Add line-height for better text display */
+      padding: 0 10px; /* Add some padding to prevent text from being too close to the edges */
+      overflow: hidden;
+      white-space: break-spaces;
+      text-overflow: ellipsis;
+      text-align: center;
+    }
+  }
+  

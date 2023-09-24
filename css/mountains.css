@@ -523,12 +523,14 @@ p {
 
   .para {
     width: 100%; /* Full width on smaller screens */
+    height: 200px; /* Adjust the height as needed */
   }
 
   .items {
     width: 100%; /* Full width on smaller screens */
-  }
-
+    position: relative; /* Add relative positioning */
+    top: -20px; /* Adjust the value to move the items higher */
+}
   .picture {
     width: 100%; /* Full width on smaller screens */
     height: auto; /* Adjust height to maintain aspect ratio */
