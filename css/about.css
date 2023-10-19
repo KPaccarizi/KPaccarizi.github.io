@@ -235,7 +235,7 @@
 }
 
 .p_slider_b {
-	position: relative; 
+	position: absolute;
 	width: 520%;
 	animation-name: slider;
 	animation-iteration-count: infinite;
