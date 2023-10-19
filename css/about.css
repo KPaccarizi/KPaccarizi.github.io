@@ -1,6 +1,12 @@
 /*////////// **************** About **************** //////////*/
 
-/* Default styles for .p_main and .histoire_background */
+/* Default styles for all screen sizes */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
 .p_main {
 	padding-bottom: 300px;
 	background-color: rgb(243, 234, 234);
@@ -16,16 +22,86 @@
 	height: 150px;
   }
   
+  /* Your general styles for other devices here */
+
+
   /* Media query for screens smaller than 768px (e.g., phones) */
-  @media screen and (max-width: 768px) {
-	.p_main {
-	  padding-bottom: 100px; /* Adjust padding for smaller screens */
+/* Default styles for all screen sizes */
+
+
+/* Styles for screens smaller than 768px (e.g., phones) */
+
+	@media screen and (max-width: 768px) {
+		.p_main {
+			padding-bottom: 100px; /* Adjust padding for smaller screens */
+		}
+	
+		.history_background {
+			height: 100px; /* Adjust the height for smaller screens */
+		}
+	
+		.p_txt_origin {
+			flex-direction: column; /* Ensure a stacked layout on smaller screens */
+		}
+	
+		.p_txt_origin_left {
+			padding: 10px; /* Reduce padding further for mobile */
+		}
+	
+		.p_txt_origin_right img {
+			width: 100%; /* Occupy full width on mobile */
+		}
+	
+		/* Add these styles for phones and iPads */
+		.p_slider_window {
+			position: fixed;
+			width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+			max-width: 100%; /* Ensure the slider doesn't exceed the screen width */
+			margin-top: 4% auto;
+			margin-bottom: 1.7%;
+			overflow: hidden; /* Hide overflowing content */
+		}
+	
+		.p_slider {
+			position: relative; /* Use relative positioning */
+			max-width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+			left: 0; /* Reset left position */
+			white-space: nowrap; /* Prevent images from wrapping to the next line */
+		}
+	
+		.p_slider_b img {
+			width: 100%; /* Adjust the image width to fit the container */
+			height: auto; /* Maintain image aspect ratio */
+		}
+	
+		.p_txt_visit {
+			position: relative;
+			z-index: 1;
+			left: 0; /* Reset left position */
+			top: 0; /* Reset top position */
+			background-color: rgb(243, 234, 234);
+			padding: 3%;
+			max-width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+			box-shadow: none; /* Remove the box shadow for smaller screens */
+			font-family: montserrat;
+		}
 	}
-  
-	.history_background {
-	  height: 100px; /* Adjust the height for smaller screens */
+	
+	/* Define the keyframes animation for the slider for all screen sizes */
+	@keyframes slider {
+		0% { left: 0%; }
+		10% { left: -4%; }
+		20% { left: -104%; }
+		30% { left: -104%; }
+		40% { left: -208%; }
+		50% { left: -208%; }
+		60% { left: -312%; }
+		70% { left: -312%; }
+		80% { left: -416%; }
+		90% { left: -416%; }
+		100% { left: 0%; }
 	}
-  }
+
   
 
 
@@ -90,21 +166,7 @@
 	padding: 10px;
   }
   
-  /* Media query for screens smaller than 768px (e.g., phones) */
-  @media screen and (max-width: 768px) {
-	.p_txt_origin {
-	  flex-direction: column; /* Ensure a stacked layout on smaller screens */
-	}
-  
-	.p_txt_origin_left {
-	  padding: 10px; /* Reduce padding further for mobile */
-	}
-  
-	.p_txt_origin_right img {
-	  width: 100%; /* Occupy full width on mobile */
-	}
-  }
-  
+
 .p_txt, .p_txt_main_history_info, .p_article{
 	font-family: montserrat;
 }
@@ -139,9 +201,9 @@
 /* slider 10 photos */ 
 
 .p_slider_window {
-	position: relative;
+	position: static;
 	width: 70%;
-	margin-top: 4%;
+	margin-top: 8%;
 	margin-bottom: 1.7%;
 }
 
@@ -152,9 +214,10 @@
 }
 
 .p_slider {
-	position: absolute;
+	position: inherit;
 	left: 20%;
 	overflow: hidden;
+	max-width: 100%;
 }
   
 @keyframes slider {
@@ -172,7 +235,7 @@
 }
 
 .p_slider_b {
-	position: relative;
+	position: relative; 
 	width: 520%;
 	animation-name: slider;
 	animation-iteration-count: infinite;
@@ -182,7 +245,7 @@
 /* text on the side of the slideshow */
 /* text on the side of the slideshow */
 .p_txt_visit {
-    position: absolute;
+    position: static;
     z-index: 1;
     left: 2vw;
     top: -2vw;
@@ -190,63 +253,22 @@
     left: -18%;
     background-color: #ecdfdf;
     padding: 3%;
-    width: 40%;
+    max-width: 100%;
     box-shadow: rgb(3 44 78 / 25%) 5px 5px 10px, rgb(3 44 78 / 30%) 0px 5px 7px -5px;
     font-family: montserrat;
 }
-@media screen and (max-width: 768px) {
-    /* Add these styles for phones and iPads */
-	.p_slider_window {
-        position: relative;
-        width: 100%; /* Adjust the width for responsiveness on phones and iPads */
-        max-width: 100%; /* Ensure the slider doesn't exceed the screen width */
-        margin-top: 4% auto;
+
+
+/* Media query for Nest Hub Max or Nest Hub Background */
+@media screen and (max-width: 1500px)  {
+
+	  .p_slider_window {
+        position: static;
+        width: 70%;
+        margin-top: 4%;
         margin-bottom: 1.7%;
-        overflow: hidden; /* Hide overflowing content */
-    }
-
-	.p_slider .p_slider_b {
-        width: 520%; /* Adjust the width for the animation */
-        animation-name: slider;
-        animation-iteration-count: infinite;
-        animation-duration: 15s;
-        white-space: nowrap; /* Prevent images from wrapping to the next line */
-    }
-
-    .p_slider_b img {
-        width: 10%; /* Adjust the image width to fit the container */
-        height: auto; /* Maintain image aspect ratio */
-        float: left;
-    }
-
-    .p_slider {
-        position: relative; /* Use relative positioning */
-        left: 0; /* Reset left position */
-        overflow: hidden;
-    }
-
-    .p_slider_b {
-        width: 100%; /* Adjust the width for responsiveness on phones and iPads */
-        position: relative; /* Use relative positioning */
-        left: 0; /* Reset left position */
-        white-space: nowrap; /* Prevent images from wrapping to the next line */
-        animation: none; /* Disable the animation for smaller screens */
-    }
-
-    .p_txt_visit {
-        position: relative;
-        z-index: 1;
-        left: 0; /* Reset left position */
-        top: 0; /* Reset top position */
-        background-color: rgb(243, 234, 234);
-        padding: 3%;
-        width: 100%; /* Adjust the width for responsiveness on phones and iPads */
-        box-shadow: none; /* Remove the box shadow for smaller screens */
-        font-family: montserrat;
     }
 }
-
-
 
 /* Style the footer */
 /* Style the footer for larger screens */
@@ -261,14 +283,274 @@ footer {
     display: flex;
     flex-direction: row;
     margin-right: 5px;
-    margin-left: 5px;
+    margin-left: 5px;/* Default styles for all screen sizes */
+	* {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 0;
+	}
+	
+	.p_main {
+		padding-bottom: 300px;
+		background-color: rgb(243, 234, 234);
+	}
+	
+	.history_background {
+		background-image: url("../content/war.jpg");
+		background-size: cover;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+		background-position: center;
+		z-index: 1;
+		height: 150px;
+	}
+	
+	/* Media query for screens smaller than 768px (e.g., phones) */
+	@media screen and (max-width: 768px) {
+		.p_main {
+			padding-bottom: 100px; /* Adjust padding for smaller screens */
+		}
+	
+		.history_background {
+			height: 100px; /* Adjust the height for smaller screens */
+		}
+	
+		/* Add these styles for phones and iPads */
+		.p_slider_window {
+			position: fixed;
+			width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+			max-width: 100%; /* Ensure the slider doesn't exceed the screen width */
+			margin-top: 4% auto;
+			margin-bottom: 1.7%;
+			overflow: hidden; /* Hide overflowing content */
+		}
+	
+		.p_slider {
+			position: static; /* Use static positioning */
+			max-width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+			white-space: nowrap; /* Prevent images from wrapping to the next line */
+
+		}
+	
+		.p_slider_b img {
+			width: 100%; /* Adjust the image width to fit the container */
+			height: auto; /* Maintain image aspect ratio */
+		}
+	
+		.p_txt_visit {
+			position: relative;
+			z-index: 1;
+			left: 0; /* Reset left position */
+			top: 0; /* Reset top position */
+			background-color: rgb(243, 234, 234);
+			padding: 3%;
+			width: 100%; /* Adjust the width for responsiveness on phones and iPads */
+			box-shadow: none; /* Remove the box shadow for smaller screens */
+			font-family: montserrat;
+		}
+	}
+	
+	/* Define the keyframes animation for the slider for all screen sizes */
+	@keyframes slider {
+		0% { left: 0%; }
+		10% { left: -4%; }
+		20% { left: -104%; }
+		30% { left: -104%; }
+		40% { left: -208%; }
+		50% { left: -208%; }
+		60% { left: -312%; }
+		70% { left: -312%; }
+		80% { left: -416%; }
+		90% { left: -416%; }
+		100% { left: 0%; }
+	}
+	
+	/* main content page */
+	.p_main_content {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 20px;
+		background-color: rgb(243, 234, 234);
+	}
+	
+	.p_article {
+		display: flex;
+		align-items: center;
+		flex-direction: column;
+		background-color: #ecdfdf;
+		width: 70%;
+		margin: 10px;
+		padding: 10px;
+		box-shadow: rgb(3 44 78 / 25%) 0px 5px 10px -5px, rgb(3 44 78 / 30%) 0px 5px 7px -5px;
+	}
+	
+	/* date enlargement */
+	.p_article:target .p_txt_main_history_info, .p_txt_main_history_img {
+		max-height: 300px;
+	}
+	
+	.p_txt_main_history_info {
+		max-height: 0em;
+		transition: 0.5s linear 0.4s;
+		overflow: hidden;
+	}
+	
+	.p_txt_main_history_img {
+		width: 300px;
+		max-height: 0em;
+		overflow: hidden;
+	}
+	
+	/* general text + "origin" */
+	/* Default styles for image and article layout */
+	.p_txt_origin {
+		display: flex;
+		flex-direction: column; /* Change to column for mobile */
+		align-items: center; /* Center horizontally */
+	}
+	
+	.p_txt_origin_left {
+		display: flex;
+		flex-direction: column;
+		width: 100%; /* Occupy full width on mobile */
+		padding: 20px; /* Reduce padding for mobile */
+		text-align: center; /* Center text on mobile */
+	}
+	
+	.p_txt_origin_right img {
+		max-width: 100%; /* Make the image responsive */
+		height: auto; /* Maintain image aspect ratio */
+		padding: 10px;
+	}
+	
+	.p_txt, .p_txt_main_history_info, .p_article {
+		font-family: montserrat;
+	}
+	
+	.p_txt_main_history_info {
+		width: 80%;
+	}
+	
+	.p_txt h1, h2, h3 {
+		font-family: Open sans;
+		padding-bottom: 10px;
+		color: #032C4E;
+		font-size: 25px;
+	}
+	
+	.p_txt h1 {
+		font-size: 30px;
+	}
+	
+	/* “learn more” button settings */
+	.p_txt_main_history_btn {
+		text-decoration: none;
+		color: black;
+		font-family: montserrat;
+		padding: 10px;
+	}
+	
+	.p_txt_main_history_btn:hover {
+		text-decoration: underline;
+		color: #38B6FF;
+		transition: 0.5s;
+	}
+	
+	/* slider 10 photos */
+	.p_slider_window {
+		position: static;
+		width: 70%;
+		margin-top: 4%;
+		margin-bottom: 1.7%;
+	}
+	
+	.p_slider .p_slider_b img {
+		width: 10%;
+		height: 300px;
+		float: left;
+	}
+	
+	.p_slider {
+		position: static;
+		left: 20%;
+		max-width: 100%;
+		overflow: hidden;
+	}
+	
+	@keyframes slider {
+		0% { left: 0%; }
+		10% { left: -4%; }
+		20% { left: -104%; }
+		30% { left: -104%; }
+		40% { left: -208%; }
+		50% { left: -208%; }
+		60% { left: -312%; }
+		70% { left: -312%; }
+		80% { left: -416%; }
+		90% { left: -416%; }
+		100% { left: 0%; }
+	}
+	
+	.p_slider_b {
+		position: relative;
+		width: 520%;
+		animation-name: slider;
+		animation-iteration-count: infinite;
+		animation-duration: 15s;
+	}
+	
+	/* text on the side of the slideshow */
+	.p_txt_visit {
+		position: absolute;
+		z-index: 1;
+		left: 2vw;
+		top: -2vw;
+		background-color: rgb(243, 234, 234);
+		left: -18%;
+		background-color: #ecdfdf;
+		padding: 3%;
+		max-width: 100%;
+		box-shadow: rgb(3 44 78 / 25%) 5px 5px 10px, rgb(3 44 78 / 30%) 0px 5px 7px -5px;
+		font-family: montserrat;
+	}
+	
+	/* Media query for Nest Hub Max or Nest Hub Background */
+	@media screen and (max-width: 1000px)  {
+		.p_slider_window {
+			position: relative;
+			width: 70%;
+			margin-top: 4%;
+			margin-bottom: 1.7%;
+		}
+	}
+	
+	/* Style the footer */
+	/* Style the footer for larger screens */
+	footer {
+		background-color: #26272b;
+		font-size: 15px;
+		height: 100px;
+		padding-top: 30px;
+	}
+	
+	.footer_container {
+		display: flex;
+		flex-direction: row;
+		margin-right: 5px;
+		margin-left: 5px;
+		gap: 20px;
+	}
+	
+	/* Responsive adjustments */
+	@media screen and (max-width: 768px) {
+		/* Hide the footer for screens with a maximum width of 768px */
+		footer {
+			display: none;
+		}
+	}
+	
     gap: 20px;
 }
 
-/* Responsive adjustments */
-@media screen and (max-width: 768px) {
-    /* Hide the footer for screens with a maximum width of 768px */
-    footer {
-        display: none;
-    }
-}
+

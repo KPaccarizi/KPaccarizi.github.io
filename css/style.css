@@ -25,6 +25,52 @@ body {
 
 }
 
+
+/* Media query for Nest Hub */
+@media screen and (max-width: 1250px) {
+  * {
+    box-sizing: border-box; /* Change box-sizing for phone-sized screens */
+    overflow-x: hidden;
+  }
+
+  .video-container {
+    padding-bottom: 0; /* Remove the padding for better space utilization */
+    flex-direction: column; /* Stack elements vertically on smaller screens */
+    display: block; /* Ensure video-container takes full width on smaller screens */
+    overflow-x: hidden; /* Hide horizontal overflow, if any */
+  }
+
+  .info-container {
+    height: auto; /* Allow the height to adjust based on content */
+    flex-direction: column;
+
+    display: block; /* Ensure info-container takes full width on smaller screens */
+  }
+
+/* Adjust the parent container (if necessary) */
+.news_1 {
+  width: 50%; /* Adjust the width of the frame */
+  margin: -10px ; /* Center the frame on the screen */
+}
+
+/* Adjust the .news_title element */
+
+.news_title {
+  color: white;
+  font-size: 20px; /* Adjust the font size for better fit on smaller screens */
+  text-align: center;
+  max-width: 35%; /* Set a smaller max-width to make the frame narrower */
+  margin: 0 auto; /* Center the element horizontally */
+  padding: 10px; /* Add some padding */
+  overflow: hidden; /* Hide overflowing text */
+  text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+}
+
+
+
+}
+
+
 /* Media query for phone-sized screens */
 @media screen and (max-width: 768px) {
   * {
@@ -32,10 +78,6 @@ body {
     overflow-x: hidden;
   }
 
-  body {
-    padding: 0; /* Remove any padding on the body element */
-    margin: 0; /* Remove any margin on the body element */
-  }
   
  .video-container {
     padding-bottom: 0; /* Remove the padding for better space utilization */
@@ -53,11 +95,14 @@ body {
     color: white;
     font-size: 20px; /* Adjust the font size for better fit on smaller screens */
     text-align: center;
-    padding-right: 10px; /* Reduce the padding for better use of space */
+    max-width: 90%; /* Set a smaller max-width to reduce width */
+    height: 80px; /* Set a smaller height */
+    margin: 0 auto; /* Center the element horizontally */
+    padding: 10px; /* Add some padding */
     overflow: hidden; /* Hide overflowing text */
     text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
   }
-}
+}  
 
 
 
@@ -203,7 +248,7 @@ body {
   background-color :transparent !important;
 }
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
   .topnav a {
     display: none;
   }
@@ -471,29 +516,34 @@ html{
 
 /* Structure */
 
-.shape_news{
-  height : auto;
-  width : 100%;
-  background-color : white;
-  font-family : montserrat;
-  margin-bottom : 15px;
-  display : flex;
-  flex-direction : column;
-  gap : 10px;
+.shape_news {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center content horizontally */
+  gap: 10px;
+  background-color: white;
+  font-family: montserrat;
+  margin-bottom: 15px;
   justify-content: center;
-}
-
-.news_title{
-  color:white;
-  font-size: 30px;
-  text-align :center;
-  padding-right : 40px;
-  overflow: hidden; /* Hide overflowing text */
-
-  white-space:inherit; /* Prevent line breaks */
-  text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
   text-align: center; /* Center-align the text */
 }
+
+.news_title {
+  color: white;
+  font-size: 120%;
+  padding: 0 auto;
+
+  overflow: hidden;
+  max-width: 100%; /* Adjust the max-width to make the box wider */
+  margin:  auto; /* Center the element horizontally */
+  height: auto; /* Allow the height to adjust based on content */
+  white-space: break-space; /* Prevent line breaks */
+  text-align: left;
+}
+
+
+   
+
 
 /* Images D&G */
 
@@ -536,7 +586,7 @@ html{
   justify-content: center;
   text-align: center;
   align-items: center;
-  height : 250px;
+  height : 100px;
   background-color : rgb(243, 234, 234);
 }
 
@@ -557,8 +607,9 @@ html{
     justify-content: center;
     text-align: center;
     align-items: center;
-    height: 150px; /* Adjust the height for phone screens */
+    height: 250px; /* Adjust the height for phone screens */
     background-color: rgb(243, 234, 234);
+
   }
 
   .news_2 h1 {
@@ -567,9 +618,60 @@ html{
     justify-content: center;
     text-align: center;
     align-items: center;
-    height: 150px; /* Adjust the height for phone screens */
+    height: 250px; /* Adjust the height for phone screens */
     font-size: 15px;
   }
+  
+#txt1{
+  display: flex;
+  background-color:white;
+  height : 100px;
+  width : 1000px;
+  justify-content : center;
+  align-items :center;
+  text-align: center;
+
+}
+
+#txt2{
+  display: flex;
+  background-color:white;
+  height : 100px;
+  width : 1000px;
+  justify-content : center;
+  align-items :center;
+  text-align: center;
+}
+
+#txt3{
+  display: flex;
+  background-color:white;
+  height : 100px;
+  width : 1000px;
+  justify-content : center;
+  align-items :center;
+}
+
+#txt4{
+  display: flex;
+  background-color:white;
+  height : 110px;
+  width : 1000px;
+  justify-content : center;
+  align-items :center;
+}
+
+/* Shared styles for txt1, txt2, txt3, txt4 */
+.text-container {
+  display: flex;
+  background-color: white;
+  width: 100%; /* Full width of the parent container */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 25%; /* Adjust this value as needed for equal spacing */
+}
+
 }
 
 
@@ -640,6 +742,8 @@ opacity : 50%;
   width : 1000px;
   justify-content : center;
   align-items :center;
+  text-align: center;
+
 }
 
 #txt4{
@@ -649,11 +753,13 @@ opacity : 50%;
   width : 1000px;
   justify-content : center;
   align-items :center;
+  text-align: center;
+
 }
 
 /* Responsive */
 
-@media screen and (max-width: 1000px) {
+@media screen and (max-width: 1250px) {
   .news_1{
     display : flex;
     flex-direction : column;
@@ -693,16 +799,16 @@ opacity : 50%;
   }
 
   .news_title {
-  color: white;
-  font-size: 30px;
-  padding-right: 0px;
-  overflow: hidden; /* Hide overflowing text */
-  white-space: nowrap; /* Prevent line breaks */
-  text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
-  text-align: center; /* Center-align the text */
-
-}
-
+    color: white;
+    font-size: 20px; /* Adjust the font size for better fit on smaller screens */
+    text-align: center;
+    max-width: 50%; /* Set a moderate max-width to make the frame narrower */
+    margin: 0 auto; /* Center the element horizontally */
+    padding: 10px 20px 10px 20px; /* Add some padding */
+    overflow: hidden; /* Hide overflowing text */
+    text-overflow: ellipsis; /* Show ellipsis (...) for overflow */
+  }
+  
 
 
   }
@@ -745,6 +851,7 @@ opacity : 50%;
   
     .news_2 h1 {
       font-size: 20px;
+      text-align: center;
     }
 
     .news_title {
@@ -753,9 +860,10 @@ opacity : 50%;
       line-height: 1; /* Add line-height for better text display */
       padding: 0 10px; /* Add some padding to prevent text from being too close to the edges */
       overflow: hidden;
-      white-space: break-spaces;
+      white-space:inherit;
       text-overflow: ellipsis;
       text-align: center;
+      max-width: 80%;
     }
   }
   
